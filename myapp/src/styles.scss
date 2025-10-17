@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@use "./app/components/homepage/homepage.component.scss";
+@use "./app/components/Qr/linkOption/link.component.scss";
+@use "./app/components/Qr/mailOption/mail.component.scss";
+@use "./app/components/Qr/wpOption/wp.component.scss";
+@use "./app/components/Qr/wifiOption/wifi.component.scss";
+@use "./app/components/Qr/qr.component.scss";
+
+*{    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat",Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: #1e1e1e;
+    color: #fff;
+}
+
+img{
+    max-width: 100%;
+    object-fit: cover;
+}

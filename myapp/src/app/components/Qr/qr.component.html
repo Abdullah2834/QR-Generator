@@ -1,3 +1,69 @@
-<h1>
-    QR Component
-</h1>
+<div class="qr-root">
+    <div class="head-item">
+        <img src="assets/img/qr-logo.jpg" alt="">
+        <h1>Get QR</h1>        
+    </div>
+    <div class="qr-wrapper">       
+        <div class="options-container">
+            <div class="options-block">
+                <div class="option-item">
+                    <div class="img-item">
+                        <i class="fi fi-rr-link-alt"></i>
+                    </div>
+                    <div class="text-item">
+                        <span>Link</span>
+                    </div>
+                </div>                
+                <div class="option-item">
+                    <div class="img-item">
+                        <img src="assets/img/whatsapp-icon.png" alt="">
+                    </div>
+                    <div class="text-item">
+                        <span>Whatsapp</span>
+                    </div>
+                </div>
+                <div class="option-item">
+                    <div class="img-item">
+                        <i class="fi fi-rr-envelope"></i>
+                    </div>
+                    <div class="text-item">
+                        <span>Email</span>
+                    </div>
+                </div>
+                <div class="option-item">
+                    <div class="img-item">
+                        <i class="fi fi-rr-wifi"></i>
+                    </div>
+                    <div class="text-item">
+                        <span>Wifi</span>
+                    </div>
+                </div>               
+            </div> 
+            <div class="qr-content-block">
+                <link-component *ngIf="showLink"></link-component>
+                <wp-component *ngIf="showWp"></wp-component>
+                <wifi-component *ngIf="showWifi"></wifi-component>
+                <mail-component *ngIf="showMail"></mail-component>
+            </div>           
+        </div>              
+        <div class="qr-theme-container">
+              <div class="current-qr-block">
+                    <span>QR Kod Önizlemesi</span>
+                    <div class="current-qr-item">
+                        <svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="300" height="300" fill="url(#pattern0_334_337)"/>
+                            <defs>
+                            <pattern id="pattern0_334_337" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_334_337" transform="matrix(0.000759878 0 0 0.000753579 -0.107903 -0.10098)"/>
+                            </pattern>
+                            <image id="image0_334_337" width="1600" height="1600" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
+                            </defs>
+                        </svg>
+                    </div>
+              </div>         
+              <div class="btn-create">
+                 <span>Qr Oluştur</span>
+              </div>           
+        </div>   
+    </div>
+</div>
