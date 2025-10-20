@@ -11,6 +11,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Montserrat",Arial, Helvetica, sans-serif;
+    user-select: none;
 }
 
 body{
@@ -21,4 +22,8 @@ body{
 img{
     max-width: 100%;
     object-fit: cover;
+}
+
+span,label{
+    display: block;
 }

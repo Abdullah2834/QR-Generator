@@ -13,5 +13,5 @@ import { QrComponent } from "../Qr/qr.component";
 })
 
 export class HomePageComponent{
-
+    
 }

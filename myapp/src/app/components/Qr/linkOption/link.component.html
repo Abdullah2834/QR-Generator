@@ -1,5 +1,8 @@
 <form action="" id="linkQr" class="qr-link">
     <label for="linkQr">Site Adresi</label>
-    <input type="text" placeholder="Link">
-    <span>http:// veya https:// ile başlayan linkler kabul edilir.</span>
+    <input type="text" placeholder="Link" (change)="getValue($event)">
+    <button class="btn-create">
+        Qr Oluştur
+    </button>    
+    <!-- <span>http:// veya https:// ile başlayan linkler kabul edilir.</span> -->
 </form>

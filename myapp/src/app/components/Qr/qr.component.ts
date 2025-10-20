@@ -4,6 +4,8 @@ import { WpComponent } from "./wpOption/wp.component";
 import { MailComponent } from "./mailOption/mail.component";
 import { WifiComponent } from "./wifiOption/wifi.component";
 import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
+
 
 @Component({
     selector:"qr-component",
@@ -15,16 +17,26 @@ import { CommonModule } from "@angular/common";
         LinkComponent,
         WpComponent,
         MailComponent,
-        WifiComponent
+        WifiComponent,
+        FormsModule         
     ]
 })
 
 export class QrComponent{
-    activeTab = "link";
-    
+    activeTab:any = "link";
+    selectedType:any = "url";
+    qrData:string = "";
 
+   
     switchModal(value:any){
-        this.activeTab = value;
+        this.activeTab = value;        
     }
+
+    switchQrType(valueType:any){
+        this.selectedType = valueType                
+    }
+
+   
+
     
 }

@@ -1,6 +1,27 @@
 <form action="" id="wifiQr" class="qr-wifi">
+
     <label for="wifiQr">Wifi Adı</label>
     <input type="text">
+
     <label for="wifiQr">Wifi Şifresi</label>
     <input type="text" placeholder="****">
+
+    <label for="">Şifreleme Yöntemi</label>
+    <div class="encryption-container" 
+        [class.active]="isEncryption"
+        (click)="toggleEncryption()">
+       <div class="current">
+            <span>Hiçbiri</span>
+           <i class="fi fi-rr-caret-down"></i>
+       </div>
+       <div class="encryption-menu" *ngIf="isEncryption">
+            <span>Hiçbiri</span>
+            <span>WPA/WPA2</span>
+            <span>WEP</span>
+       </div>
+    </div>
+    
+    <button class="btn-create">
+        Qr Oluştur
+    </button> 
 </form>

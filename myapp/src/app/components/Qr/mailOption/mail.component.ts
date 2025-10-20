@@ -1,4 +1,6 @@
-import { Component,Input } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { Component,Input, Output,EventEmitter } from "@angular/core";
+
 
 
 
@@ -7,9 +9,16 @@ import { Component,Input } from "@angular/core";
     standalone: true,
     templateUrl: "./mail.component.html",
     styleUrls:["./mail.component.scss"],    
-    
+    imports:[CommonModule]
 })
 
 export class MailComponent{
     @Input() showLink:boolean = true;
+    
+    mailValue = "";
+    
+    getValue(event:any){    
+       this.mailValue = event.target.value;
+       console.log(this.mailValue);       
+    }
 }

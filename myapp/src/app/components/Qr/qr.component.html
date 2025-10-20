@@ -8,7 +8,7 @@
             <div class="options-block">
                 <div class="option-item" 
                     [class.active] = "activeTab === 'link'"
-                    (click)="switchModal('link')">
+                    (click)="[switchModal('link'),switchQrType('url')]">
                     <div class="img-item" >
                         <i class="fi fi-rr-link-alt"></i>
                     </div>
@@ -18,7 +18,7 @@
                 </div>                
                 <div class="option-item" 
                     [class.active] = "activeTab === 'wp'" 
-                    (click)="switchModal('wp')">
+                    (click)="[switchModal('wp'),switchQrType('phone')]">
                     <div class="img-item">
                         <img src="assets/img/whatsapp-icon.png" alt="">
                     </div>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="option-item" 
                     [class.active] = "activeTab === 'mail'" 
-                    (click)="switchModal('mail')">
+                    (click)="[switchModal('mail'),switchQrType('mail')]">
                     <div class="img-item">
                         <i class="fi fi-rr-envelope"></i>
                     </div>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="option-item" 
                     [class.active] = "activeTab === 'wifi'" 
-                    (click)="switchModal('wifi')">
+                    (click)="[switchModal('wifi'),switchQrType('wifi')]">
                     <div class="img-item">
                         <i class="fi fi-rr-wifi"></i>
                     </div>
@@ -48,10 +48,18 @@
                 </div>               
             </div> 
             <div class="qr-content-block">
-                <link-component *ngIf="activeTab === 'link'"></link-component>
-                <wp-component *ngIf="activeTab === 'wp'"></wp-component>
-                <wifi-component *ngIf="activeTab === 'wifi'"></wifi-component>
-                <mail-component *ngIf="activeTab === 'mail'"></mail-component>
+                <link-component 
+                    
+                    *ngIf="activeTab === 'link'"></link-component>
+                <wp-component 
+                    
+                    *ngIf="activeTab === 'wp'"></wp-component>
+                <wifi-component 
+                    
+                    *ngIf="activeTab === 'wifi'"></wifi-component>
+                <mail-component 
+                    
+                    *ngIf="activeTab === 'mail'"></mail-component>
             </div>           
         </div>              
         <div class="qr-theme-container">
@@ -68,10 +76,7 @@
                             </defs>
                         </svg>
                     </div>
-              </div>         
-              <div class="btn-create">
-                 <span>Qr Oluştur</span>
-              </div>           
+              </div>                              
         </div>   
     </div>
 </div>

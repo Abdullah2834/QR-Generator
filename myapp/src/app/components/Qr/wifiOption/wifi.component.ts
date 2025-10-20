@@ -1,4 +1,6 @@
-import { Component, Input } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { Component, Input, Output,EventEmitter } from "@angular/core";
+
 
 
 @Component({
@@ -6,10 +8,19 @@ import { Component, Input } from "@angular/core";
     standalone: true,
     templateUrl: "./wifi.component.html",
     styleUrls:["./wifi.component.scss"],    
-    
+    imports:[CommonModule]
 })
 
 export class WifiComponent{
-   @Input() showWifi: boolean = true;
-  
+   @Input() showWifi: boolean = true;  
+   textValue = "";
+   isEncryption:boolean = false;
+//    selectedEncryption:any = "";
+    
+   toggleEncryption(){
+        this.isEncryption = !this.isEncryption;
+   }
+//    getEncryption(value:any){
+//         this.selectedEncryption = value
+//    }
 }
