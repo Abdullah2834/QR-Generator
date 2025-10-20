@@ -6,15 +6,19 @@
     <div class="qr-wrapper">       
         <div class="options-container">
             <div class="options-block">
-                <div class="option-item">
-                    <div class="img-item">
+                <div class="option-item" 
+                    [class.active] = "activeTab === 'link'"
+                    (click)="switchModal('link')">
+                    <div class="img-item" >
                         <i class="fi fi-rr-link-alt"></i>
                     </div>
                     <div class="text-item">
                         <span>Link</span>
                     </div>
                 </div>                
-                <div class="option-item">
+                <div class="option-item" 
+                    [class.active] = "activeTab === 'wp'" 
+                    (click)="switchModal('wp')">
                     <div class="img-item">
                         <img src="assets/img/whatsapp-icon.png" alt="">
                     </div>
@@ -22,7 +26,9 @@
                         <span>Whatsapp</span>
                     </div>
                 </div>
-                <div class="option-item">
+                <div class="option-item" 
+                    [class.active] = "activeTab === 'mail'" 
+                    (click)="switchModal('mail')">
                     <div class="img-item">
                         <i class="fi fi-rr-envelope"></i>
                     </div>
@@ -30,7 +36,9 @@
                         <span>Email</span>
                     </div>
                 </div>
-                <div class="option-item">
+                <div class="option-item" 
+                    [class.active] = "activeTab === 'wifi'" 
+                    (click)="switchModal('wifi')">
                     <div class="img-item">
                         <i class="fi fi-rr-wifi"></i>
                     </div>
@@ -40,10 +48,10 @@
                 </div>               
             </div> 
             <div class="qr-content-block">
-                <link-component *ngIf="showLink"></link-component>
-                <wp-component *ngIf="showWp"></wp-component>
-                <wifi-component *ngIf="showWifi"></wifi-component>
-                <mail-component *ngIf="showMail"></mail-component>
+                <link-component *ngIf="activeTab === 'link'"></link-component>
+                <wp-component *ngIf="activeTab === 'wp'"></wp-component>
+                <wifi-component *ngIf="activeTab === 'wifi'"></wifi-component>
+                <mail-component *ngIf="activeTab === 'mail'"></mail-component>
             </div>           
         </div>              
         <div class="qr-theme-container">

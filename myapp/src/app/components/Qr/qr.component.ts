@@ -20,8 +20,11 @@ import { CommonModule } from "@angular/common";
 })
 
 export class QrComponent{
-    showWifi = false;
-    showLink = false;
-    showMail = false;
-    showWp = true;
+    activeTab = "link";
+    
+
+    switchModal(value:any){
+        this.activeTab = value;
+    }
+    
 }

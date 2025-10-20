@@ -77,6 +77,7 @@
         
         img{
             filter: brightness(0) invert(1);
+             transition: 0.2s;
         }
 
         i,img{
@@ -84,6 +85,16 @@
         }
 
         &:hover{
+            background: #fff;
+            color: #000;
+            transition: 0.2s;
+            img{
+                filter: brightness(0) invert(0);
+                transition: 0.2s;
+            }
+        }
+
+        &.active{
             background: #fff;
             color: #000;
             transition: 0.2s;
