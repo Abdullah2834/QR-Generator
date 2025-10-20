@@ -175,12 +175,17 @@
         }
     }
 
-    .qr-link,.qr-wp{
+    .qr-link,.qr-wp,.qr-mail,.qr-wifi{
         span{
             font-size: 12px;
             margin: 16px 0 0;
             display: block;
         }
+        label{
+            margin: 16px 0 12px;
+            display: block;
+        }
+        
     }
 }
 
