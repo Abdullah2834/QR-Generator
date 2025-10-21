@@ -15,9 +15,7 @@
            <i class="fi fi-rr-caret-down"></i>
        </div>
        <div class="encryption-menu" *ngIf="isEncryption">
-            <span>Hiçbiri</span>
-            <span>WPA/WPA2</span>
-            <span>WEP</span>
+           <span *ngFor="let item of encryptionData">{{item}}</span>
        </div>
     </div>
     

@@ -107,11 +107,16 @@
         margin: 24px auto 0;
         padding: 12px;
 
-        svg{
+        img{
             opacity: 0.2;
             width: 100%;
             height: 100%;
             
+        }
+        &.QR{
+            img{
+                opacity: 1;
+            }
         }
     }
 
@@ -252,5 +257,28 @@
     }
 }
 
-
+.success-message{
+    position: fixed;
+    top: 0;
+    width: 100%; 
+    height: 60px;   
+    max-width: 300px;
+    background: #00F308;
+    border-radius: 6px;
+    color: #000;
+    font-weight: 600;
+    font-size: 18px;
+    transition: right ease-in-out 0.3s;
+    span{
+        padding: 16px 0;
+        text-align: center;
+    }
+    &.show{
+        right: 0;
+        transition: right ease-in-out 0.3s;
+    }
+    &.hide{
+        right: -100%;
+    }
+}
 

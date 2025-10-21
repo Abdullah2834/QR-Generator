@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component,Input, Output, EventEmitter } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 
 
 @Component({
@@ -7,21 +8,19 @@ import { Component,Input, Output, EventEmitter } from "@angular/core";
     standalone: true,
     templateUrl: "./link.component.html",
     styleUrls:["./link.component.scss"],    
-    imports:[CommonModule]
+    imports:[CommonModule, FormsModule]
 })
 
 export class LinkComponent{
-    @Input() showLink:boolean = true;  
+    @Input() showLink:boolean = true;
     urlValue = "";
-     
-  
     
-    getValue(event:any){    
-       this.urlValue = event.target.value;
-    }
-
-    generateQr(){
-           
+    @Output() generate = new EventEmitter<any>;
+    
+    onGenerateClick(){
+        if(this.urlValue.trim()){
+            this.generate.emit(this.urlValue.trim())                         
+        }                                        
     }
     
 }

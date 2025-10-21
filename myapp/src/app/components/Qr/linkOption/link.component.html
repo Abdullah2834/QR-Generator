@@ -1,7 +1,11 @@
-<form action="" id="linkQr" class="qr-link">
+<form action="" id="linkQr" class="qr-link" 
+     (submit)="onGenerateClick(); $event.preventDefault()">
     <label for="linkQr">Site Adresi</label>
-    <input type="text" placeholder="Link" (change)="getValue($event)">
-    <button class="btn-create">
+    <input type="text"    
+        [(ngModel)]="urlValue"     
+        placeholder="Link"
+        name="link">
+    <button class="btn-create" type="submit">
         Qr Oluştur
     </button>    
     <!-- <span>http:// veya https:// ile başlayan linkler kabul edilir.</span> -->
