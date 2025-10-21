@@ -1,7 +1,13 @@
-<form action="" id="mailQr" class="qr-mail">
-    <label for="linkQr">E-posta Adresi</label>
-    <input type="email" placeholder="E-posta" (change)="getValue($event)">
-    <button class="btn-create">
+<form action="" id="mailQr" class="qr-mail" (submit)="onGenerate(); $event.preventDefault()">
+    <label for="mailQr">E-posta Adresi</label>
+    <input type="email" placeholder="E-posta">
+
+    <label for="mailQr">Konu</label>
+    <input type="email" placeholder="E-posta">
+
+    <label for="mailQr">Mesaj</label>
+    <textarea></textarea>
+    <button class="btn-create" type="submit">
         Qr Oluştur
     </button>  
 </form>

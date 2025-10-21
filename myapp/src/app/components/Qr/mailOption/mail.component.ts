@@ -17,8 +17,13 @@ export class MailComponent{
     
     mailValue = "";
     
-    getValue(event:any){    
-       this.mailValue = event.target.value;
-       console.log(this.mailValue);       
+    @Output() generate = new EventEmitter<any>;
+    
+    onGenerate(){
+        if(this.mailValue.trim()){
+            this.generate.emit(`mailto:${this.mailValue}`)  
+            console.log("mailValue",this.mailValue);
+                                   
+        }                                        
     }
 }

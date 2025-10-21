@@ -15,8 +15,7 @@ import * as QRCode from "qrcode";
     imports:[
         CommonModule,
         LinkComponent,
-        WpComponent,
-        MailComponent,
+        WpComponent,        
         WifiComponent,
         FormsModule         
     ]
@@ -36,9 +35,9 @@ export class QrComponent{
         this.link = newLink
     }
 
-    async generateQr(link:any){
+    async generateQr(data:any){
         try{
-            this.qrCodeUrl = await QRCode.toDataURL(link)
+            this.qrCodeUrl = await QRCode.toDataURL(data)
             this.isMessage = true;
             setTimeout(()=>{
                 this.isMessage = false;

@@ -17,7 +17,7 @@ export class LinkComponent{
     
     @Output() generate = new EventEmitter<any>;
     
-    onGenerateClick(){
+    onGenerate(){
         if(this.urlValue.trim()){
             this.generate.emit(this.urlValue.trim())                         
         }                                        

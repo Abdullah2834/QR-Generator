@@ -26,7 +26,7 @@
                         <span>Whatsapp</span>
                     </div>
                 </div>
-                <div class="option-item" 
+                <!-- <div class="option-item" 
                     [class.active] = "activeTab === 'mail'" 
                     (click)="[switchModal('mail')]">
                     <div class="img-item">
@@ -35,7 +35,7 @@
                     <div class="text-item">
                         <span>E-posta</span>
                     </div>
-                </div>
+                </div> -->
                 <div class="option-item" 
                     [class.active] = "activeTab === 'wifi'" 
                     (click)="[switchModal('wifi')]">
@@ -57,9 +57,9 @@
                 <wifi-component 
                     
                     *ngIf="activeTab === 'wifi'"></wifi-component>
-                <mail-component 
+                <!-- <mail-component 
                     
-                    *ngIf="activeTab === 'mail'"></mail-component>
+                    *ngIf="activeTab === 'mail'"></mail-component> -->
             </div>           
         </div>              
         <div class="qr-theme-container">
