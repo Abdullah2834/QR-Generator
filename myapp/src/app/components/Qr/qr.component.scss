@@ -207,16 +207,12 @@
             }
     }
     .btn-pdf,.btn-img{
-        
-        a{
-            text-align: center;
-            color: #fff;
-            text-decoration: none;
-        }
-        &:hover{
-            a{
-                color: #000;
-            }
+        text-decoration: none;
+        text-align: center;
+        color: #fff;
+       
+        &:hover{           
+            color: #000;
         }
         &.disabled{
             pointer-events: none;

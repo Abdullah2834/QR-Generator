@@ -71,12 +71,12 @@
                     </div>
               </div>      
               <div class="btn-block">
-                    <div class="btn-pdf" [ngClass]="!qrCodeUrl ? 'disabled' : ''">
-                        <a href="#" (click)="downloadPDF()">PDF İndir</a>
-                    </div>
-                    <div class="btn-img" [ngClass]="!qrCodeUrl ? 'disabled' : ''">
-                        <a href="#" (click)="downloadPNG()">PNG İndir</a>
-                    </div>
+                    <a class="btn-pdf" [ngClass]="!qrCodeUrl ? 'disabled' : ''"  href="#" (click)="downloadPDF()">
+                        PDF İndir
+                    </a>
+                    <a class="btn-img" [ngClass]="!qrCodeUrl ? 'disabled' : ''" href="#" (click)="downloadPNG()">
+                         PNG İndir
+                    </a>
 
               </div>
         </div>   
