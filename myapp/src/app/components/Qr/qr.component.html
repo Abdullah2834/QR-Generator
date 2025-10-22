@@ -62,14 +62,23 @@
                     *ngIf="activeTab === 'mail'"></mail-component> -->
             </div>           
         </div>              
-        <div class="qr-theme-container">
+        <div class="qr-theme-container" >
               <div class="current-qr-block">
                     <span>QR Kod Önizlemesi</span>
-                    <div class="current-qr-item" [ngClass]="qrCodeUrl ? 'QR' : ''">
+                    <div class="current-qr-item" [ngClass]="qrCodeUrl ? 'QR' : ''" #qrCodeElement>
                         <img [src]="qrCodeUrl ? qrCodeUrl : 'assets/img/qr-preview.png'" alt="">
                         <!-- <img src="" alt=""> -->
                     </div>
-              </div>                                           
+              </div>      
+              <div class="btn-block">
+                    <div class="btn-pdf" [ngClass]="!qrCodeUrl ? 'disabled' : ''">
+                        <a href="#" (click)="downloadPDF()">PDF İndir</a>
+                    </div>
+                    <div class="btn-img" [ngClass]="!qrCodeUrl ? 'disabled' : ''">
+                        <a href="#" (click)="downloadPNG()">PNG İndir</a>
+                    </div>
+
+              </div>
         </div>   
         <div class="success-message" [ngClass]="isMessage ? 'show' : 'hide' ">
             <span>QR Oluşturuldu</span>
