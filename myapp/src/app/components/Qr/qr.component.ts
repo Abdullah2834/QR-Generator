@@ -26,6 +26,7 @@ export class QrComponent{
     qrCodeUrl: string | null = null;
     link:any = "";
     isMessage:boolean = false;
+    
 
     switchModal(value:any){
         this.activeTab = value;        

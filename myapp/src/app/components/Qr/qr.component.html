@@ -52,10 +52,10 @@
                     (generate)="generateQr($event)"
                     *ngIf="activeTab === 'link'"></link-component>
                 <wp-component 
-                    
+                    (generate)="generateQr($event)"
                     *ngIf="activeTab === 'wp'"></wp-component>
                 <wifi-component 
-                    
+                    (generate)="generateQr($event)"
                     *ngIf="activeTab === 'wifi'"></wifi-component>
                 <!-- <mail-component 
                     

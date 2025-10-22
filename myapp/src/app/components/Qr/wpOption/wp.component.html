@@ -1,12 +1,24 @@
-<form action="" id="wpQr" class="qr-wp">
+<form 
+     #phoneForm="ngForm" action="" class="qr-wp" 
+     (ngSubmit)="onSubmit(phoneForm); $event.preventDefault()">
 
-    <label for="wpQr">Telefon Numarası</label>
-    <input type="text" placeholder="+90 000 000 0000">
+    <label for="phoneNumber">Telefon Numarası</label>
+    <input 
+            [(ngModel)]="phone" 
+            id="phoneNumber"
+            name="phone" 
+            type="text" 
+            placeholder="+90 555 555 5555">
 
-    <label for="wpQr" class="msg">Mesaj (Zorunlu Değil)</label>
-    <textarea type="text" placeholder="Mesajınız"></textarea>    
+    <label for="message" class="msg">Mesaj (Zorunlu Değil)</label>
+    <textarea 
+            [(ngModel)]="message" 
+            id="message"
+            name="message" 
+            type="text" 
+            placeholder="Mesajınız"></textarea>    
 
-    <button class="btn-create">
+    <button type="submit" class="btn-create" [disabled]="phoneForm.invalid">
         Qr Oluştur
     </button> 
     <!-- <span>Telefon numaranızın başında ülke kodu olmalı (+90 vs.)</span> -->

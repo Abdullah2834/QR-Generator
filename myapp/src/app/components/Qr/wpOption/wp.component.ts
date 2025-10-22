@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component,Input, Output,EventEmitter } from "@angular/core";
+import { FormsModule, NgForm } from "@angular/forms";
 
 
 
@@ -9,15 +10,32 @@ import { Component,Input, Output,EventEmitter } from "@angular/core";
     standalone: true,
     templateUrl: "./wp.component.html",
     styleUrls:["./wp.component.scss"],
-    imports:[CommonModule]
+    imports:[CommonModule,FormsModule]
 })
 
 export class WpComponent{
    @Input() showWp:boolean = true;
-   
-   textValue = "";
+
+   @Output() generate = new EventEmitter<any>;
+
+   phone:any = "";
+   message:any = "";
+
   
-   ngOnInit(){
-       
+   onSubmit(form: NgForm){
+     if(form.invalid) return;
+  
+     const encodedMsg = encodeURIComponent(this.message.trim());
+
+     let qrData = `https://wa.me/${this.phone.replace(/\D/g, '')}`
+
+     if(this.message.trim()){
+        qrData += `?text=${encodedMsg}`
+     }
+
+     this.generate.emit(qrData);
+     
+     console.log("qrData",qrData);
+     
    }
 }
