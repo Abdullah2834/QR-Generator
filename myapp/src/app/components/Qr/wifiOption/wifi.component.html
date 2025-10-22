@@ -1,25 +1,47 @@
-<form action="" id="wifiQr" class="qr-wifi">
+<form     
+        #wifiForm="ngForm"
+        action="" 
+        id="wifiQr" 
+        class="qr-wifi" 
+        (ngSubmit)="onGenerate(wifiForm);">
 
-    <label for="wifiQr">Wifi Adı</label>
-    <input type="text">
+    <label for="ssid">Wifi Adı</label>
+    <input 
+        [(ngModel)]="ssid"
+        type="text" 
+        name="ssid"
+        id="ssid"
+        >
 
-    <label for="wifiQr">Wifi Şifresi</label>
-    <input type="text" placeholder="****">
+    <label for="wifiPassword">Wifi Şifresi</label>
+    <input 
+        type="password" 
+        placeholder="****"        
+        [(ngModel)]="password"
+        name="password"
+        id="wifiPassword"
+        >
 
     <label for="">Şifreleme Yöntemi</label>
-    <div class="encryption-container" 
+    <div 
+        class="encryption-container" 
         [class.active]="isEncryption"
-        (click)="toggleEncryption()">
+        (click)="toggleEncryption()" 
+        #encryption>
+
        <div class="current">
-            <span>Hiçbiri</span>
+            <span>{{selectedEncryption.name || "Hiçbiri"}}</span>
            <i class="fi fi-rr-caret-down"></i>
        </div>
        <div class="encryption-menu" *ngIf="isEncryption">
-           <span *ngFor="let item of encryptionData">{{item}}</span>
+           <span 
+                *ngFor="let item of encryptionData" 
+                (click)="selectEncryption(item)">{{item.name}}</span>
        </div>
+
     </div>
     
-    <button class="btn-create">
+    <button class="btn-create" type="submit">
         Qr Oluştur
     </button> 
 </form>
