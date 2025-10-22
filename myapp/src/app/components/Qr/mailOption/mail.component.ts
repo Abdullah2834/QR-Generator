@@ -21,9 +21,7 @@ export class MailComponent{
     
     onGenerate(){
         if(this.mailValue.trim()){
-            this.generate.emit(`mailto:${this.mailValue}`)  
-            console.log("mailValue",this.mailValue);
-                                   
+            this.generate.emit(`mailto:${this.mailValue}`)                                                 
         }                                        
     }
 }

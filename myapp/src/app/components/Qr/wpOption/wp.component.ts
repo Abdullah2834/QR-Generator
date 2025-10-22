@@ -35,7 +35,5 @@ export class WpComponent{
 
      this.generate.emit(qrData);
      
-     console.log("qrData",qrData);
-     
    }
 }

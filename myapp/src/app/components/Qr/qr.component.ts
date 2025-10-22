@@ -60,8 +60,7 @@ export class QrComponent{
     }
 
     async downloadPDF(){
-        const qrElement = this.qrCodeElement?.nativeElement
-        console.log("qrElement",qrElement.value);
+        const qrElement = this.qrCodeElement?.nativeElement        
         
         const canvas = await html2canvas(qrElement,{scale: 3,backgroundColor:null})
         const imgData = canvas.toDataURL("image/png")
