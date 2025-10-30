@@ -1,0 +1,7 @@
+{
+  "template": "node",
+  "container": {
+    "node": "23",
+    "port": 4200
+  }
+}
