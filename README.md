@@ -11,4 +11,4 @@ Projeye göz atmak için:
 - npm run start komutunu çalıştırın
 
 
-Demo link: https://codesandbox.io/p/github/Abdullah2834/QR-Generator/dev?workspaceId=ws_U3LmXsjyKJ8jy7wjkJ78Lr
+Demo link: https://codesandbox.io/p/github/Abdullah2834/QR-Generator/dev
